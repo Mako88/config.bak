@@ -1,0 +1,28 @@
+Backup
+	config.list Location
+		Default: /etc/config.list
+		On OK, check. Popup "Not Found" if not found. On Cancel, reset to default.
+	Backup Location
+		Default ~/backup/year-month-day-backup (folder)
+	Files to Scan
+		Checkbox list allowing user to select what to scan for with All/None at top.
+		List with expandable categories. If category selected, all files beneath it selected.
+	Scan
+		Show settings with OK/Cancel. On OK, scan. On Cancel return to Backup menu.
+		Scan with progress bar, showing each filename.
+		Detected Config Files
+			Checkbox list with select All/None at top.
+			Backup/Cancel buttons.
+		Backing Up Progress Bar
+			(All files are placed with hiarchies preserved inside the backup folder. files.list is created in the root backup directory with the locations of all files backed up.)
+		"Thank you for using Config.bak. <X> files successfully backed up to <blah>." - Quit button.
+Restore
+	Backup Location
+		Default: ~/backup
+		On "OK", check that files.list exists in the base backup directory, if not, "Not a valid backup".
+	Files to Restore
+		Restore type: Ask, Replace, Merge, Concat
+		Expandable checkbox list of files.list by category. (If error.list exists, create category "Error" with files in error.list at top)
+	Restore
+		If "Ask" was set, ask for each file. Otherwise perform the selected action. (Replace makes a file.bak backup of each replacement, merge keeps anything that's the same between the files, and concats the rest.)
+		"<X> Files successfully restored. <Y> files could not be restored (maybe because you're not root?). These files have been saved in error.list in the backup folder. If you run config.bak again, you will be able to restore these files separately."
