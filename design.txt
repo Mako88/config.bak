@@ -21,7 +21,7 @@ Restore
 		Default: ~/backup
 		On "OK", check that files.list exists in the base backup directory, if not, "Not a valid backup".
 	Files to Restore
-		Restore type: Ask, Replace, Merge, Concat
+		Restore type: Ask, Replace, Concat
 		Expandable checkbox list of files.list by category. (If error.list exists, create category "Error" with files in error.list at top)
 	Restore
 		If "Ask" was set, ask for each file. Otherwise perform the selected action. (Replace makes a file.bak backup of each replacement, merge keeps anything that's the same between the files, and concats the rest.)
